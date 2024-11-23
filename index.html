@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Fun Fact Generator</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f0f8ff;
+      margin: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+
+    .container {
+      text-align: center;
+      background-color: #ffffff;
+      padding: 20px 40px;
+      border-radius: 10px;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    }
+
+    h1 {
+      color: #333;
+    }
+
+    #fact-display {
+      margin: 20px 0;
+      font-size: 1.2em;
+      color: #555;
+    }
+
+    button {
+      padding: 10px 20px;
+      font-size: 1em;
+      color: #fff;
+      background-color: #007bff;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: background-color 0.3s;
+    }
+
+    button:hover {
+      background-color: #0056b3;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Fun Fact Generator</h1>
+    <p id="fact-display">Click the button to see a fun fact!</p>
+    <button id="generate-fact">Generate Fun Fact</button>
+  </div>
+  <script>
+    const facts = [
+      "Leonardo da Vinci could draw with one hand while writing with the other!",
+      "Vincent van Gogh painted over 30 self-portraits during his lifetime.",
+      "Frida Kahlo started painting after a bus accident left her bedridden.",
+      "Pablo Picasso could draw before he could walk and said his first word: 'pencil.'",
+      "Claude Monet's famous water lilies were inspired by his own garden in Giverny.",
+      "Michelangelo wrote poetry alongside creating masterpieces like the Sistine Chapel ceiling.",
+      "Georgia O’Keeffe is known as the 'Mother of American Modernism' for her unique style.",
+      "Salvador Dalí carried a pet ocelot named Babou wherever he went!",
+      "Yayoi Kusama's polka-dot artworks are inspired by hallucinations she experienced as a child.",
+      "Andy Warhol created over 600 time capsules, which are boxes filled with random objects from his daily life."
+    ];
+
+    const factDisplay = document.getElementById('fact-display');
+    const generateButton = document.getElementById('generate-fact');
+
+    // Event listener for button click
+    generateButton.addEventListener('click', () => {
+      // Get a random fact
+      const randomFact = facts[Math.floor(Math.random() * facts.length)];
+      // Display it on the page
+      factDisplay.textContent = randomFact;
+    });
+  </script>
+</body>
+</html>
